@@ -61,7 +61,8 @@ There you can live demo the following API calls:
 * * *
 ## Schema
 
-<img src="./public/images/api-schema.png" alt="Image of schema.">
+<img src="./public/images/shelter_api_schema.png" alt="Image of schema.">
+
 * * *
 ## Software Requirements
 * **Ruby is required to run this application**
