@@ -8,7 +8,7 @@ describe "update an animal type route", :type => :request do
   end
 
   it 'updates the animal type' do
-    expect(Animal.find(@animal.id).country).to eq('updated_animal_type')
+    expect(Animal.find(@animal.id).animal_type).to eq('updated_animal_type')
   end
 
   it 'returns an updated status' do

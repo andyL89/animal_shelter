@@ -4,7 +4,7 @@ describe "get a single animal's details route", :type => :request do
 
   before do
     @animal = FactoryBot.create(:animal)
-    @detail = FactoryBot.create(:detail)
+    @detail = Detail.create({ :name => 'Lula', :breed => 'Welsh Corgi', :sex => 'Female', :color => 'Brown, Black, & White', :age => 3, :weight => 25, :bio => 'A sometimes loud, yet very cute pup.', :animal_id => @animal.id })
     get "/animals/#{@animal.id}/details/#{@id}"
   end
 

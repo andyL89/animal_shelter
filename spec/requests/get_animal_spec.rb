@@ -8,7 +8,7 @@ describe "get a single animal type route", :type => :request do
   end
 
   it 'returns a single animal type' do
-    expect(JSON.parse(response.body).size).to eq(1)
+    expect(JSON.parse(response.body)['animal_type']).to eq(@animal.animal_type)
   end
 
   it 'returns status code 200' do

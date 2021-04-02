@@ -4,7 +4,7 @@ describe "update an animal's details route", :type => :request do
 
   before do
     @animal = FactoryBot.create(:animal)
-    @detail = Detail.create({ :author => 'Jo', :content => 'wow, what a lovely place', :rating => 5, :animal_id => @animal.id })
+    @detail = Detail.create({ :name => 'Spot', :breed => 'Dachshund', :sex => 'Male', :color => 'Brown & White', :age => 4, :weight => 11, :bio => 'A curious little dog.', :animal_id => @animal.id })
     put "/animals/#{@animal.id}/details/#{@detail.id}", params: { :name => 'Lula', :breed => 'Welsh Corgi', :sex => 'Female', :color => 'Brown, Black, & White', :age => 3, :weight => 25, :bio => 'A sometimes loud, yet very cute pup.' }
   end
 
@@ -21,19 +21,19 @@ describe "update an animal's details route", :type => :request do
   end
 
   it "updates the color in an animal's details" do
-    expect(Detail.find(@detail.id).sex).to eq('Brown, Black, & White')
+    expect(Detail.find(@detail.id).color).to eq('Brown, Black, & White')
   end
 
   it "updates the age in an animal's details" do
-    expect(Detail.find(@detail.id).sex).to eq(3)
+    expect(Detail.find(@detail.id).age).to eq(3)
   end
 
   it "updates the weight in an animal's details" do
-    expect(Detail.find(@detail.id).sex).to eq(25)
+    expect(Detail.find(@detail.id).weight).to eq(25)
   end
 
   it "updates the bio in an animal's details" do
-    expect(Detail.find(@detail.id).sex).to eq('A sometimes loud, yet very cute pup.')
+    expect(Detail.find(@detail.id).bio).to eq('A sometimes loud, yet very cute pup.')
   end
 
   it 'returns an updated status' do
