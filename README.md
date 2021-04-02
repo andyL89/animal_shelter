@@ -38,11 +38,11 @@ There you can live demo the following API calls:
 | <span style="color:red">Delete</span> | /animals/{animal_id} | _Deletes an animal type_ |
 | <span style="color:blue">Get</span> | /animals/{animal_id} | _Fetches a single animal type_ |
 | <span style="color:gold">Patch</span> | /animals/{animal_id} | _Updates a single animal type_ |
-| <span style="color:blue">Get</span> | /animals/{animal_id}/details | _Fetches all animals for an animal type_ |
-| <span style="color:green">Post</span> | /animals/{animal_id}/details | _Creates an animal within an animal type_     |
-| <span style="color:red">Delete</span> | /animals/{animal_id}/details/{id} | _Deletes an animal from an animal type_ |
-| <span style="color:blue">Get</span> | /animals/{animal_id}/details/{id} | _Fetches a single animal from an animal type_ |
-| <span style="color:gold">Patch</span> | /animals/{animal_id}/details/{id} | _Updates a single animal from an animal type_ |
+| <span style="color:blue">Get</span> | /animals/{animal_id}/details | _Fetches all animals of a specific animal type_ |
+| <span style="color:green">Post</span> | /animals/{animal_id}/details | _Creates an animal's details_     |
+| <span style="color:red">Delete</span> | /animals/{animal_id}/details/{id} | _Deletes an animal's details_ |
+| <span style="color:blue">Get</span> | /animals/{animal_id}/details/{id} | _Fetches a single animal's details_ |
+| <span style="color:gold">Patch</span> | /animals/{animal_id}/details/{id} | _Updates a single animal's details_ |
 
 ## Responses & Errors
 
