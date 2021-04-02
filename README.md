@@ -43,6 +43,9 @@ There you can live demo the following API calls:
 | <span style="color:blue">Get</span> | /animals/{animal_id}/details/{id} | _Fetches a single animal's details_ |
 | <span style="color:gold">Patch</span> | /animals/{animal_id}/details/{id} | _Updates a single animal's details_ |
 
+<img src="./public/images/swagger_UI.png" alt="Image of swagger UI">
+
+* * *
 ## Responses & Errors
 
 * 404 - Not Found \
@@ -55,7 +58,7 @@ There you can live demo the following API calls:
 * * *
 ## Schema
 
-<img src="./public/images/shelter_api_schema.png" alt="Image of schema.">
+<img src="./public/images/shelter_api_schema.png" alt="Image of schema">
 
 * * *
 ## Software Requirements
