@@ -20,10 +20,10 @@ class Seed
       animal_type: "dog"
     )
     10.times do |i|
-      Detail.create!(name: Faker::Creature::Cat.name, breed: Faker::Creature::Cat.breed, sex: Faker::Gender.binary_type, color: Faker::Color.color_name, age: Faker::Number.within(range: 1..20), weight: Faker::Measurement.weight, bio: Faker::TvShows::TwinPeaks.quote, animal_id: animal_1.id)
+      Detail.create!(name: Faker::Creature::Cat.name, breed: Faker::Creature::Cat.breed, sex: Faker::Gender.binary_type, color: Faker::Color.color_name, age: Faker::Number.within(range: 1..20), weight: Faker::Number.within(range: 1..20), bio: Faker::TvShows::TwinPeaks.quote, animal_id: animal_1.id)
     end
     10.times do |i|
-      Detail.create!(name: Faker::Creature::Dog.name, breed: Faker::Creature::Dog.breed, sex: Faker::Gender.binary_type, color: Faker::Color.color_name, age: Faker::Number.within(range: 1..20), weight: Faker::Measurement.weight, bio: Faker::TvShows::TwinPeaks.quote, animal_id: animal_2.id)
+      Detail.create!(name: Faker::Creature::Dog.name, breed: Faker::Creature::Dog.breed, sex: Faker::Gender.binary_type, color: Faker::Color.color_name, age: Faker::Number.within(range: 1..20), weight: Faker::Number.within(range: 1..100), bio: Faker::TvShows::TwinPeaks.quote, animal_id: animal_2.id)
     end
   end
 end

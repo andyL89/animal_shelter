@@ -4,7 +4,7 @@
 
 ## Description
 
-An animal shelter API that includes a list of animals at the shelter, along with details about each animal. A user can make API calls to get, create, update, and delete animals and animal details.
+An animal shelter API that includes a list of animal types, the animals within those types, and the details about each animal. A user can make API calls to get, create, update, and delete animal types as well as specific animals within those types.
 
 ## Technologies used
 
@@ -30,29 +30,24 @@ This service requires no authentication to use.
 To Demo this API, follow the installation instructions listed below and navigate to http://localhost:3000/index.html in your browser. \
 There you can live demo the following API calls:
 
-**_Note: To search destination by country, state, or city, search params must be lowercase_**
-
  Action |  Route | Description
 | :--- | --- | ---: |
-| <span style="color:blue">Get</span> | /random | _Fetches a random destination_ |
-| <span style="color:blue">Get</span> | /destinations | _Fetches all destinations_ |
-| <span style="color:blue">Get</span> | /destinations?country={country} | _Fetches destinations that match a country_ |
-| <span style="color:blue">Get</span> | /destinations?state={state} | _Fetches destinations that match a state_ |
-| <span style="color:blue">Get</span> | /destinations?city={city} | _Fetches destinations that match a city_ |
-| <span style="color:green">Post</span> | /destinations | _Creates a destination_ |
-| <span style="color:red">Delete</span> | /destinations/{destination_id} | _Deletes a destination_ |
-| <span style="color:blue">Get</span> | /destinations/{destination_id} | _Fetches a single destination_ |
-| <span style="color:gold">Patch</span> | /destinations/{destination_id} | _Updates a single destination_ |
-| <span style="color:blue">Get</span> | /destinations/{destination_id}/reviews | _Fetches all reviews for a destination_ |
-| <span style="color:green">Post</span> | /destinations/{destination_id}/reviews | _Creates a review for a destination_     |
-| <span style="color:red">Delete</span> | /destinations/{destination_id}/reviews/{review_id} | _Deletes a review for a destination_ |
-| <span style="color:blue">Get</span> | /destinations/{destination_id}/reviews/{review_id} | _Fetches a single review for a destination_ |
-| <span style="color:gold">Patch</span> | /destinations/{destination_id}/reviews/{review_id} | _Updates a single review for a destination_ |
+| <span style="color:blue">Get</span> | /random | _Fetches a random animal_ |
+| <span style="color:blue">Get</span> | /animals | _Fetches all animal types_ |
+| <span style="color:green">Post</span> | /animals | _Creates an animal type_ |
+| <span style="color:red">Delete</span> | /animals/{animal_id} | _Deletes an animal type_ |
+| <span style="color:blue">Get</span> | /animals/{animal_id} | _Fetches a single animal type_ |
+| <span style="color:gold">Patch</span> | /animals/{animal_id} | _Updates a single animal type_ |
+| <span style="color:blue">Get</span> | /animals/{animal_id}/details | _Fetches all animals for an animal type_ |
+| <span style="color:green">Post</span> | /animals/{animal_id}/details | _Creates an animal within an animal type_     |
+| <span style="color:red">Delete</span> | /animals/{animal_id}/details/{detail_id} | _Deletes an animal from an animal type_ |
+| <span style="color:blue">Get</span> | /animals/{animal_id}/details/{detail_id} | _Fetches a single animal from an animal type_ |
+| <span style="color:gold">Patch</span> | /animals/{animal_id}/details/{detail_id} | _Updates a single animal from an animal type_ |
 
 ## Responses & Errors
 
 * 404 - Not Found \
-  **{ "message": "Couldn't find Destination with 'id'=  " }**
+  **{ "message": "Couldn't find animal with 'id'=  " }**
 * 422 - Unprocessable Entity \
   **{ "message": "Validation failed" }**
 * 500 - Internal Server Error \
