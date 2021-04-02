@@ -60,7 +60,7 @@ class AnimalsController < ApplicationController
   swagger_api :destroy do
     summary "Deletes an existing animal type"
     param :path, :id, :integer, :optional, "Animal Id"
-    response :ok, "This animal type has been removed successfully."
+    response :ok, "This animal type has been deleted successfully."
     response :not_found
     response :unprocessable_entity
   end
@@ -68,7 +68,7 @@ class AnimalsController < ApplicationController
     @animal = Animal.find(params[:id])
     if @animal.destroy!
       render status: 200, json: {
-        message: "This animal type has been removed successfully."
+        message: "This animal type has been deleted successfully."
       }
     end
   end

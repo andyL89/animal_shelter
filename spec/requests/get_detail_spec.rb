@@ -1,14 +1,14 @@
 require 'rails_helper'
 
-describe "get all animals of a specific type route", :type => :request do
+describe "get a single animal's details route", :type => :request do
 
   before do
     @animal = FactoryBot.create(:animal)
     @detail = FactoryBot.create(:detail)
-    get "/animals/#{@animal.id}/details"
+    get "/animals/#{@animal.id}/details/#{@id}"
   end
 
-  it 'returns all details' do
+  it "returns a single animal's details" do
     expect(JSON.parse(response.body).size).to eq(1)
   end
 
