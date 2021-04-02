@@ -4,7 +4,7 @@ class DetailsController < ApplicationController
   swagger_api :index do
     summary "Fetches all animals of a specific animal type"
     notes "This lists all the animals of a specific animal type"
-    param :path, :destination_id, :integer, :required, "Animal Id"
+    param :path, :animal_id, :integer, :required, "Animal Id"
     response :ok, "Success"
     response :unauthorized
     response :not_acceptable, "The request you made is not acceptable"
@@ -18,10 +18,10 @@ class DetailsController < ApplicationController
   swagger_api :show do
     summary "Fetches a single animal's details"
     param :path, :animal_id, :integer, :required, "Animal Id"
-    param :path, :id, :integer, :required, "Detail Id"
+    param :path, :id, :integer, :required, "id"
     response :ok, "Success"
     response :not_found
-    response :unprocessable_entity, "A detail with that id does not match the destination id."
+    response :unprocessable_entity, "An animal with that id does not match the animal id."
   end
   def show
     @animal = Animal.find(params[:animal_id])
@@ -30,16 +30,22 @@ class DetailsController < ApplicationController
       json_response(@detail)
     else
       render status: 404, json: {
-        message: "A specific animal with that id does not match the animal id."
+        message: "An animal with that id does not match the animal id."
       }
     end
   end
 
   swagger_api :create do
-    summary "Creates a new detail"
-    param :form, :author, :string, :required, "Author"
-    param :form, :content, :string, :required, "Content"
-    param :form, :rating, :integer, :required, "Rating, 1-5"
+    summary "Creates a new animal's details"
+    notes "Check for corresponding animal ids for animal types by looking in 'get/animals' below."
+    param :path, :animal_id, :integer, :required, "Animal id"
+    param :form, :name, :string, :required, "Name"
+    param :form, :breed, :string, :required, "Breed"
+    param :form, :sex, :string, :required, "Sex"
+    param :form, :color, :string, :required, "Color"
+    param :form, :age, :integer, :required, "Age"
+    param :form, :weight, :integer, :required, "Weight(lbs)"
+    param :form, :bio, :integer, :required, "Bio"
     response :ok, "Success"
     response :not_found
     response :unprocessable_entity
@@ -50,13 +56,17 @@ class DetailsController < ApplicationController
   end
 
   swagger_api :update do
-    summary "Updates an existing detail"
-    param :path, :destination_id, :integer, :required, "Destination Id"
-    param :path, :id, :integer, :required, "detail Id"
-    param :form, :author, :string, :optional, "Author"
-    param :form, :content, :string, :optional, "Content"
-    param :form, :rating, :integer, :optional, "Rating, 1-5"
-    response :ok, "This detail has been updated successfully."
+    summary "Updates an existing animal's details"
+    param :path, :animal_id, :integer, :required, "Animal id"
+    param :path, :id, :integer, :required, "id"
+    param :form, :name, :string, :required, "Name"
+    param :form, :breed, :string, :required, "Breed"
+    param :form, :sex, :string, :required, "Sex"
+    param :form, :color, :string, :required, "Color"
+    param :form, :age, :integer, :required, "Age"
+    param :form, :weight, :integer, :required, "Weight(lbs)"
+    param :form, :bio, :integer, :required, "Bio"
+    response :ok, "This animal's details have been updated successfully."
     response :not_found
     response :unprocessable_entity
   end
@@ -70,10 +80,10 @@ class DetailsController < ApplicationController
   end
 
   swagger_api :destroy do
-    summary "Deletes an existing detail"
-    param :path, :destination_id, :integer, :required, "Destination Id"
-    param :path, :id, :integer, :required, "detail Id"
-    response :ok, "This detail has been deleted successfully."
+    summary "Deletes an existing animal's details"
+    param :path, :animal_id, :integer, :required, "Animal id"
+    param :path, :id, :integer, :required, "id"
+    response :ok, "This animal's details have been deleted successfully."
     response :not_found
     response :unprocessable_entity
   end
@@ -81,7 +91,7 @@ class DetailsController < ApplicationController
     @detail = Detail.find(params[:id])
     if @detail.destroy!
       render status: 200, json: {
-        message: "This specific animal has been removed successfully."
+        message: "This animal's details have been deleted successfully."
       }
     end
   end

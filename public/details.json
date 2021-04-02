@@ -1,0 +1,310 @@
+{
+  "apiVersion": "1.0",
+  "swaggerVersion": "1.2",
+  "basePath": "http://localhost:3000",
+  "resourcePath": "details",
+  "apis": [
+    {
+      "path": "/animals/{animal_id}/details",
+      "operations": [
+        {
+          "summary": "Fetches all animals of a specific animal type",
+          "notes": "This lists all the animals of a specific animal type",
+          "parameters": [
+            {
+              "paramType": "path",
+              "name": "animal_id",
+              "type": "integer",
+              "description": "Animal Id",
+              "required": true
+            }
+          ],
+          "responseMessages": [
+            {
+              "code": 200,
+              "responseModel": null,
+              "message": "Success"
+            },
+            {
+              "code": 401,
+              "responseModel": null,
+              "message": "Unauthorized"
+            },
+            {
+              "code": 406,
+              "responseModel": null,
+              "message": "The request you made is not acceptable"
+            }
+          ],
+          "nickname": "Details#index",
+          "method": "get"
+        }
+      ]
+    },
+    {
+      "path": "/animals/{animal_id}/details",
+      "operations": [
+        {
+          "summary": "Creates a new animal's details",
+          "notes": "Check for corresponding animal ids for animal types by looking in 'get/animals' below.",
+          "parameters": [
+            {
+              "paramType": "path",
+              "name": "animal_id",
+              "type": "integer",
+              "description": "Animal id",
+              "required": true
+            },
+            {
+              "paramType": "form",
+              "name": "name",
+              "type": "string",
+              "description": "Name",
+              "required": true
+            },
+            {
+              "paramType": "form",
+              "name": "breed",
+              "type": "string",
+              "description": "Breed",
+              "required": true
+            },
+            {
+              "paramType": "form",
+              "name": "sex",
+              "type": "string",
+              "description": "Sex",
+              "required": true
+            },
+            {
+              "paramType": "form",
+              "name": "color",
+              "type": "string",
+              "description": "Color",
+              "required": true
+            },
+            {
+              "paramType": "form",
+              "name": "age",
+              "type": "integer",
+              "description": "Age",
+              "required": true
+            },
+            {
+              "paramType": "form",
+              "name": "weight",
+              "type": "integer",
+              "description": "Weight(lbs)",
+              "required": true
+            },
+            {
+              "paramType": "form",
+              "name": "bio",
+              "type": "integer",
+              "description": "Bio",
+              "required": true
+            }
+          ],
+          "responseMessages": [
+            {
+              "code": 200,
+              "responseModel": null,
+              "message": "Success"
+            },
+            {
+              "code": 404,
+              "responseModel": null,
+              "message": "Not Found"
+            },
+            {
+              "code": 422,
+              "responseModel": null,
+              "message": "Unprocessable Entity"
+            }
+          ],
+          "nickname": "Details#create",
+          "method": "post"
+        }
+      ]
+    },
+    {
+      "path": "/animals/{animal_id}/details/{id}",
+      "operations": [
+        {
+          "summary": "Fetches a single animal's details",
+          "parameters": [
+            {
+              "paramType": "path",
+              "name": "animal_id",
+              "type": "integer",
+              "description": "Animal Id",
+              "required": true
+            },
+            {
+              "paramType": "path",
+              "name": "id",
+              "type": "integer",
+              "description": "id",
+              "required": true
+            }
+          ],
+          "responseMessages": [
+            {
+              "code": 200,
+              "responseModel": null,
+              "message": "Success"
+            },
+            {
+              "code": 404,
+              "responseModel": null,
+              "message": "Not Found"
+            },
+            {
+              "code": 422,
+              "responseModel": null,
+              "message": "An animal with that id does not match the animal id."
+            }
+          ],
+          "nickname": "Details#show",
+          "method": "get"
+        }
+      ]
+    },
+    {
+      "path": "/animals/{animal_id}/details/{id}",
+      "operations": [
+        {
+          "summary": "Updates an existing animal's details",
+          "parameters": [
+            {
+              "paramType": "path",
+              "name": "animal_id",
+              "type": "integer",
+              "description": "Animal id",
+              "required": true
+            },
+            {
+              "paramType": "path",
+              "name": "id",
+              "type": "integer",
+              "description": "id",
+              "required": true
+            },
+            {
+              "paramType": "form",
+              "name": "name",
+              "type": "string",
+              "description": "Name",
+              "required": true
+            },
+            {
+              "paramType": "form",
+              "name": "breed",
+              "type": "string",
+              "description": "Breed",
+              "required": true
+            },
+            {
+              "paramType": "form",
+              "name": "sex",
+              "type": "string",
+              "description": "Sex",
+              "required": true
+            },
+            {
+              "paramType": "form",
+              "name": "color",
+              "type": "string",
+              "description": "Color",
+              "required": true
+            },
+            {
+              "paramType": "form",
+              "name": "age",
+              "type": "integer",
+              "description": "Age",
+              "required": true
+            },
+            {
+              "paramType": "form",
+              "name": "weight",
+              "type": "integer",
+              "description": "Weight(lbs)",
+              "required": true
+            },
+            {
+              "paramType": "form",
+              "name": "bio",
+              "type": "integer",
+              "description": "Bio",
+              "required": true
+            }
+          ],
+          "responseMessages": [
+            {
+              "code": 200,
+              "responseModel": null,
+              "message": "This animal's details have been updated successfully."
+            },
+            {
+              "code": 404,
+              "responseModel": null,
+              "message": "Not Found"
+            },
+            {
+              "code": 422,
+              "responseModel": null,
+              "message": "Unprocessable Entity"
+            }
+          ],
+          "nickname": "Details#update",
+          "method": "patch"
+        }
+      ]
+    },
+    {
+      "path": "/animals/{animal_id}/details/{id}",
+      "operations": [
+        {
+          "summary": "Deletes an existing animal's details",
+          "parameters": [
+            {
+              "paramType": "path",
+              "name": "animal_id",
+              "type": "integer",
+              "description": "Animal id",
+              "required": true
+            },
+            {
+              "paramType": "path",
+              "name": "id",
+              "type": "integer",
+              "description": "id",
+              "required": true
+            }
+          ],
+          "responseMessages": [
+            {
+              "code": 200,
+              "responseModel": null,
+              "message": "This animal's details have been deleted successfully."
+            },
+            {
+              "code": 404,
+              "responseModel": null,
+              "message": "Not Found"
+            },
+            {
+              "code": 422,
+              "responseModel": null,
+              "message": "Unprocessable Entity"
+            }
+          ],
+          "nickname": "Details#destroy",
+          "method": "delete"
+        }
+      ]
+    }
+  ],
+  "authorizations": null
+}
