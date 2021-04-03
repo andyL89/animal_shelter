@@ -32,7 +32,6 @@ There you can live demo the following API calls:
 
  Action |  Route | Description
 | :--- | --- | ---: |
-| <span style="color:blue">Get</span> | /random | _Fetches a random animal's details_ |
 | <span style="color:blue">Get</span> | /animals | _Fetches all animal types_ |
 | <span style="color:green">Post</span> | /animals | _Creates an animal type_ |
 | <span style="color:red">Delete</span> | /animals/{animal_id} | _Deletes an animal type_ |
@@ -43,6 +42,7 @@ There you can live demo the following API calls:
 | <span style="color:red">Delete</span> | /animals/{animal_id}/details/{id} | _Deletes an animal's details_ |
 | <span style="color:blue">Get</span> | /animals/{animal_id}/details/{id} | _Fetches a single animal's details_ |
 | <span style="color:gold">Patch</span> | /animals/{animal_id}/details/{id} | _Updates a single animal's details_ |
+| <span style="color:blue">Get</span> | /random | _Fetches a random animal's details_ |
 
 <img src="./public/images/swagger_UI.png" alt="Image of swagger UI">
 
