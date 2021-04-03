@@ -168,7 +168,7 @@
             {
               "code": 200,
               "responseModel": null,
-              "message": "This animal type has been removed successfully."
+              "message": "This animal type has been deleted successfully."
             },
             {
               "code": 404,

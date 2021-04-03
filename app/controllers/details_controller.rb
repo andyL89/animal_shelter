@@ -35,6 +35,20 @@ class DetailsController < ApplicationController
     end
   end
 
+  swagger_api :random do
+    summary "Fetches a random animal's details"
+    notes "Fetches a single random animal's details"
+    response :ok, "Success"
+    response :not_found
+    response :unprocessable_entity
+  end
+  def random
+    ids = Animal.pluck(:id)
+    @random_animal = Animal.find(ids.sample)
+    @random_detail = @random_animal.details.sample
+    json_response(@random_detail)
+  end
+
   swagger_api :create do
     summary "Creates a new animal's details"
     notes "Check for corresponding animal ids for animal types by looking in 'get/animals' below."

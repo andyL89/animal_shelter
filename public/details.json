@@ -304,6 +304,34 @@
           "method": "delete"
         }
       ]
+    },
+    {
+      "path": "/random",
+      "operations": [
+        {
+          "summary": "Fetches a random animal's details",
+          "notes": "Fetches a single random animal's details",
+          "responseMessages": [
+            {
+              "code": 200,
+              "responseModel": null,
+              "message": "Success"
+            },
+            {
+              "code": 404,
+              "responseModel": null,
+              "message": "Not Found"
+            },
+            {
+              "code": 422,
+              "responseModel": null,
+              "message": "Unprocessable Entity"
+            }
+          ],
+          "nickname": "Details#random",
+          "method": "get"
+        }
+      ]
     }
   ],
   "authorizations": null
