@@ -32,6 +32,7 @@ There you can live demo the following API calls:
 
  Action |  Route | Description
 | :--- | --- | ---: |
+| <span style="color:blue">Get</span> | /random | _Fetches a random animal's details_ |
 | <span style="color:blue">Get</span> | /animals | _Fetches all animal types_ |
 | <span style="color:green">Post</span> | /animals | _Creates an animal type_ |
 | <span style="color:red">Delete</span> | /animals/{animal_id} | _Deletes an animal type_ |
